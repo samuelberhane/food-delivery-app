@@ -10,6 +10,7 @@ import FoodCard from "./FoodCard";
 import Popular from "./Popular";
 import Delivery from "./Delivery";
 import Steps from "./Steps";
+import Joinus from "./Joinus";
 
 export {
   Navbar,
@@ -24,4 +25,5 @@ export {
   Popular,
   Delivery,
   Steps,
+  Joinus,
 };
