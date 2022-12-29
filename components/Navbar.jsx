@@ -3,7 +3,7 @@ import { BsFillTelephoneInboundFill, BsFillCartDashFill } from "react-icons/bs";
 
 const Navbar = () => {
   return (
-    <div className="bg-gray-800 flex justify-between px-12 py-4 text-white items-center">
+    <div className="bg-gray-800 flex justify-between px-12  text-white items-center sticky top-0 h-20 z-10">
       {/* logo */}
       <h1 className="flex text-3xl items-center">
         Daily <DiJqueryLogo className="text-blue-300" /> Meal

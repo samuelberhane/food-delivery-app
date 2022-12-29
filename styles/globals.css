@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.home {
+  min-height: calc(100vh - 5rem);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.foodImg {
+  width: 60% !important;
+  height: 50% !important;
+}
+
+.deliveryText {
+  top: 10%;
+  left: 10%;
+  color: #fff;
+}
