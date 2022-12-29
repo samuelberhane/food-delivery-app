@@ -22,3 +22,10 @@
   height: 120px !important;
   width: 140px !important;
 }
+
+.foodItem {
+  height: 180px !important;
+  width: 230px !important;
+
+  object-fit: cover;
+}
