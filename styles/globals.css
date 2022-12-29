@@ -28,3 +28,13 @@
   width: 230px !important;
   object-fit: cover;
 }
+
+.userImage {
+  height: 70px !important;
+  width: 70px !important;
+}
+
+.userContainer {
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+}

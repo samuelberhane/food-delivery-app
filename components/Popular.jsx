@@ -4,7 +4,7 @@ import { FoodCard } from "./";
 const Popular = () => {
   return (
     <div>
-      <h1 className="text-3xl font-bold mt-8">
+      <h1 className="text-3xl font-bold">
         Most <span className="text-yellow-700">Popular</span>{" "}
       </h1>
       <div className="flex items-center justify-between mt-4 flex-wrap">

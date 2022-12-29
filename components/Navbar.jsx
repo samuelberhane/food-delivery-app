@@ -14,9 +14,9 @@ const Navbar = () => {
         <li className="flex items-center relative text-blue-300">
           <DiJqueryLogo className="absolute -top-2 -left-2 " /> Home
         </li>
+        <li>Reviews</li>
+        <li>Join Us</li>
         <li>About Us</li>
-        <li>Pages</li>
-        <li>Blog</li>
         <li>Contact</li>
       </ul>
 

@@ -1,6 +1,6 @@
 const Joinus = () => {
   return (
-    <div>
+    <div className="mt-8">
       <h1 className="text-center font-bold text-4xl">
         JOIN OUR EAT WELL,
         <span className="text-yellow-700">BE WELL CULTURE.</span>

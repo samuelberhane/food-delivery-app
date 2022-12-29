@@ -11,6 +11,8 @@ import Popular from "./Popular";
 import Delivery from "./Delivery";
 import Steps from "./Steps";
 import Joinus from "./Joinus";
+import Reviews from "./Reviews";
+import Review from "./Review";
 
 export {
   Navbar,
@@ -26,4 +28,6 @@ export {
   Delivery,
   Steps,
   Joinus,
+  Reviews,
+  Review,
 };
