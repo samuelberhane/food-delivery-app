@@ -1,8 +1,8 @@
-import { Categories, NearYou } from "./";
+import { Categories, NearYou, Popular, Delivery } from "./";
 
 const MenuItems = () => {
   return (
-    <div className="">
+    <div className="flex">
       <div className="w-[75%] px-12 py-6">
         {/* Menu Category */}
         <Categories />
@@ -11,9 +11,12 @@ const MenuItems = () => {
         <NearYou />
 
         {/* Most Popular */}
+        <Popular />
       </div>
 
       {/* Delivery */}
+
+      <Delivery />
     </div>
   );
 };

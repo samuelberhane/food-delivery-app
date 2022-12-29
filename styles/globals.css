@@ -26,6 +26,5 @@
 .foodItem {
   height: 180px !important;
   width: 230px !important;
-
   object-fit: cover;
 }

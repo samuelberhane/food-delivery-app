@@ -7,6 +7,8 @@ import Categories from "./Categories";
 import Category from "./Category";
 import NearYou from "./NearYou";
 import FoodCard from "./FoodCard";
+import Popular from "./Popular";
+import Delivery from "./Delivery";
 
 export {
   Navbar,
@@ -18,4 +20,6 @@ export {
   Category,
   NearYou,
   FoodCard,
+  Popular,
+  Delivery,
 };
