@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { FiClock } from "react-icons/fi";
+import { BsShop } from "react-icons/bs";
+import { TbTruckDelivery } from "react-icons/tb";
 
 const HomeTop = () => {
   return (
@@ -27,6 +30,17 @@ const HomeTop = () => {
           <p className="absolute right-0 top-1 z-10 bg-yellow-600  px-5 py-1 rounded-2xl">
             Search
           </p>
+        </div>
+        <div>
+          <div className="flex gap-2 items-center my-2">
+            <FiClock /> <p>24/7 DELIVERY</p>
+          </div>
+          <div className="flex gap-2 items-center my-2">
+            <BsShop /> <p>OVER 2000 RESTAURANTS</p>
+          </div>
+          <div className="flex gap-2 items-center my-2">
+            <TbTruckDelivery /> <p>FAST DELIVERY</p>
+          </div>
         </div>
       </div>
     </div>

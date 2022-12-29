@@ -1,4 +1,4 @@
-import { Categories, NearYou, Popular, Delivery } from "./";
+import { Categories, NearYou, Popular, Delivery, Steps } from "./";
 
 const MenuItems = () => {
   return (
@@ -14,9 +14,13 @@ const MenuItems = () => {
         <Popular />
       </div>
 
-      {/* Delivery */}
+      <div>
+        {/* Delivery */}
+        <Delivery />
 
-      <Delivery />
+        {/* How It Works */}
+        <Steps />
+      </div>
     </div>
   );
 };

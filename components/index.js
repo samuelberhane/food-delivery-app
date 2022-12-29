@@ -9,6 +9,7 @@ import NearYou from "./NearYou";
 import FoodCard from "./FoodCard";
 import Popular from "./Popular";
 import Delivery from "./Delivery";
+import Steps from "./Steps";
 
 export {
   Navbar,
@@ -22,4 +23,5 @@ export {
   FoodCard,
   Popular,
   Delivery,
+  Steps,
 };

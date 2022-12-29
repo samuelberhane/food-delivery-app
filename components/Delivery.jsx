@@ -11,7 +11,7 @@ const Delivery = () => {
           <h1 className="font-bold text-xl">
             Fast <span className="text-yellow-600">Delivery</span>{" "}
           </h1>
-          <p>Promise to delivery in 30 mins</p>
+          <p>Promise to delivery in 30 mins.</p>
         </div>
       </div>
       <div className="flex gap-4 items-center my-5">
@@ -20,7 +20,7 @@ const Delivery = () => {
           <h1 className="font-bold text-xl">
             Pick <span className="text-yellow-600">Up</span>{" "}
           </h1>
-          <p>Pickup delivery at your doorstep</p>
+          <p>Pickup delivery at your doorstep.</p>
         </div>
       </div>
       <div className="flex gap-4 items-center">
@@ -29,7 +29,7 @@ const Delivery = () => {
           <h1 className="font-bold text-xl">
             Dine <span className="text-yellow-600">In</span>{" "}
           </h1>
-          <p>Enjoy your food fresh crispy and hot</p>
+          <p>Enjoy your fresh, crispy and hot food.</p>
         </div>
       </div>
     </div>
