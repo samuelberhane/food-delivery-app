@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { HomeTop } from "../components";
+import { HomeTop, MenuItems } from "../components";
 
 export default function Home() {
   return (
@@ -11,8 +11,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Home */}
+      {/* Home Top Component */}
       <HomeTop />
+
+      {/* Menu Items */}
+      <MenuItems />
     </>
   );
 }

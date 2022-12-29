@@ -17,3 +17,8 @@
   left: 10%;
   color: #fff;
 }
+
+.categoryImg {
+  height: 120px !important;
+  width: 140px !important;
+}
