@@ -17,7 +17,7 @@ const Navbar = () => {
         <li>Reviews</li>
         <li>Join Us</li>
         <li>About Us</li>
-        <li>Contact</li>
+        <li>Contacts</li>
       </ul>
 
       {/* cart and phone */}
@@ -28,7 +28,7 @@ const Navbar = () => {
         </div>
         <div className="relative">
           <BsFillCartDashFill className="text-2xl" />{" "}
-          <p className="absolute -top-4 -right-2 text-lg text-yellow-300">0</p>
+          <p className="absolute -top-4 -right-2 text-lg">0</p>
         </div>
       </div>
     </div>
