@@ -13,6 +13,8 @@ import Steps from "./Steps";
 import Joinus from "./Joinus";
 import Reviews from "./Reviews";
 import Review from "./Review";
+import Aboutus from "./Aboutus";
+import Contact from "./Contact"
 
 export {
   Navbar,
@@ -30,4 +32,6 @@ export {
   Joinus,
   Reviews,
   Review,
+  Aboutus,
+  Contact
 };

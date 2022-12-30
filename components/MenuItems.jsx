@@ -6,6 +6,8 @@ import {
   Steps,
   Joinus,
   Reviews,
+  Aboutus,
+  Contact
 } from "./";
 
 const MenuItems = () => {
@@ -33,8 +35,15 @@ const MenuItems = () => {
 
       {/* Reviews */}
       <Reviews />
+
       {/* Join Us */}
       <Joinus />
+
+      {/* About Us */}
+      <Aboutus />
+
+      {/* Contact */}
+      <Contact/>
     </>
   );
 };
