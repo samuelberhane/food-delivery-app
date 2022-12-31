@@ -5,7 +5,7 @@ import { GiProgression } from "react-icons/gi";
 import { AiOutlineDeliveredProcedure } from "react-icons/ai";
 
 const order = () => {
-  const index = 1;
+  const index = 2;
   const step = (stepNumber) => {
     if (stepNumber - index === 1) return "ongoing";
     if (stepNumber - index > 1) return "next";
