@@ -5,7 +5,7 @@ import { MdDeliveryDining } from "react-icons/md";
 import { BsFillCartPlusFill } from "react-icons/bs";
 
 const FoodCard = ({ item }) => {
-  const { restaurant, distance, rate, name, image } = item;
+  const { restaurant, distance, rate, name, image, price } = item;
   return (
     <div className="mb-4 shadow-md relative">
       <div>
@@ -19,7 +19,11 @@ const FoodCard = ({ item }) => {
         <BsFillCartPlusFill className="absolute top-2 left-2 bg-blue-600 text-white p-2 text-4xl rounded-full hover:bg-green-500 cursor-pointer" />
       </div>
 
-      <p>{name}</p>
+      <div className="flex justify-between items-center text-sm">
+        <p>{name}</p>
+        <p>{price}$</p>
+      </div>
+
       <div className="flex justify-between items-center">
         <p className="font-bold">{restaurant} </p>
         <div className="flex gap-1 items-center">

@@ -14,7 +14,9 @@ import Joinus from "./Joinus";
 import Reviews from "./Reviews";
 import Review from "./Review";
 import Aboutus from "./Aboutus";
-import Contact from "./Contact"
+import Contact from "./Contact";
+import Cart from "./Cart";
+import CartItems from "./CartItems";
 
 export {
   Navbar,
@@ -33,5 +35,7 @@ export {
   Reviews,
   Review,
   Aboutus,
-  Contact
+  Contact,
+  Cart,
+  CartItems,
 };

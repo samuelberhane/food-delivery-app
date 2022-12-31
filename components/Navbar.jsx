@@ -15,8 +15,8 @@ const Navbar = () => {
           <DiJqueryLogo className="absolute -top-2 -left-2 " /> Home
         </li>
         <li>Reviews</li>
-        <li>Join Us</li>
         <li>About Us</li>
+        <li>Join Us</li>
         <li>Contacts</li>
       </ul>
 

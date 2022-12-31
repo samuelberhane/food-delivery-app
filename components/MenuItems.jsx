@@ -7,14 +7,14 @@ import {
   Joinus,
   Reviews,
   Aboutus,
-  Contact
+  Contact,
 } from "./";
 
 const MenuItems = () => {
   return (
     <>
       <div className="flex">
-        <div className="w-[75%] px-12 py-6 flex flex-col gap-6">
+        <div className="w-[85%] px-6 py-6 flex flex-col gap-6">
           {/* Menu Category */}
           <Categories />
 
@@ -36,14 +36,14 @@ const MenuItems = () => {
       {/* Reviews */}
       <Reviews />
 
-      {/* Join Us */}
-      <Joinus />
-
       {/* About Us */}
       <Aboutus />
 
+      {/* Join Us */}
+      <Joinus />
+
       {/* Contact */}
-      <Contact/>
+      <Contact />
     </>
   );
 };

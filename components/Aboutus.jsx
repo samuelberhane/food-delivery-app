@@ -9,7 +9,7 @@ const Aboutus = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ducimus
         error ex velit quas commodi!
       </p>
-      <div className="flex items-center px-12 gap-12">
+      <div className="flex items-center px-6 gap-12">
         <Image
           src="/img/plate.jpeg"
           alt="foodPlate"

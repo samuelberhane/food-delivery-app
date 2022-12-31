@@ -24,8 +24,8 @@
 }
 
 .foodItem {
-  height: 180px !important;
-  width: 230px !important;
+  height: 200px !important;
+  width: 250px !important;
   object-fit: cover;
 }
 
@@ -37,4 +37,28 @@
 .userContainer {
   border-top-left-radius: 0.7rem;
   border-top-right-radius: 0.7rem;
+}
+
+.cartFood {
+  height: 100% !important;
+  width: 100% !important;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.cartFoodContainer {
+  width: 70px;
+  height: 55px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
 }

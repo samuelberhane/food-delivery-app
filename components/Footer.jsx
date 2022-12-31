@@ -3,7 +3,7 @@ import { AiFillInstagram } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-800  mt-3 px-12">
+    <div className="bg-gray-800  mt-3 px-6">
       <div className="flex justify-between text-white pt-2">
         <div>
           <h1 className="text-2xl font-bold text-yellow-500 mb-1">LEGAL</h1>
@@ -24,8 +24,8 @@ const Footer = () => {
           <h1 className="text-2xl font-bold text-yellow-500 mb-1">LINKS</h1>
           <p>Home</p>
           <p>Reviews</p>
-          <p>Join Us</p>
           <p>About Us</p>
+          <p>Join Us</p>
           <p>Contacts</p>
         </div>
         <div>
