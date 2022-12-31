@@ -2,6 +2,7 @@ import { DiJqueryLogo } from "react-icons/di";
 import { BsFillTelephoneInboundFill, BsFillCartDashFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { HANDLE_CART } from "../redux/slice/cartSlice";
+import Link from "next/link";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -23,8 +24,9 @@ const Navbar = () => {
         <li>Contacts</li>
       </ul>
 
-      {/* cart and phone */}
+      {/* order, cart and phone */}
       <div className="flex gap-8 items-center text-xl">
+        <Link href="/order/:id">Orders</Link>
         <div className="flex gap-1 items-center">
           <BsFillTelephoneInboundFill className="text-2xl text-yellow-500" />
           <p>+1 876 124 243</p>
