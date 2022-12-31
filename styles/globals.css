@@ -51,6 +51,20 @@
   height: 55px;
 }
 
+.showCart {
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  transition: 1s ease-in;
+}
+
+.hideCart {
+  top: 80px;
+  right: -500px;
+  bottom: 0;
+  transition: 1.1s ease-in;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }

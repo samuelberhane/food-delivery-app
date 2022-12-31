@@ -1,7 +1,10 @@
 import { DiJqueryLogo } from "react-icons/di";
 import { BsFillTelephoneInboundFill, BsFillCartDashFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { HANDLE_CART } from "../redux/slice/cartSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   return (
     <div className="bg-gray-800 flex justify-between px-12  text-white items-center sticky top-0 h-20 z-50">
       {/* logo */}
@@ -27,7 +30,10 @@ const Navbar = () => {
           <p>+1 876 124 243</p>
         </div>
         <div className="relative">
-          <BsFillCartDashFill className="text-2xl" />{" "}
+          <BsFillCartDashFill
+            className="text-2xl cursor-pointer"
+            onClick={() => dispatch(HANDLE_CART())}
+          />{" "}
           <p className="absolute -top-4 -right-2 text-lg">0</p>
         </div>
       </div>
