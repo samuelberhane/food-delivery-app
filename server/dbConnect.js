@@ -13,6 +13,7 @@ if (!MONGODB_URI) {
  * in development. This prevents connections growing exponentially
  * during API Route usage.
  */
+mongoose.set("strictQuery", false);
 let cached = global.mongoose;
 
 if (!cached) {
@@ -29,7 +30,7 @@ async function dbConnect() {
       bufferCommands: false,
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
+    cached.promise = await mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
       return mongoose;
     });
   }

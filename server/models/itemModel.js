@@ -1,21 +1,16 @@
 import mongoose from "mongoose";
-
 const ItemSchema = new mongoose.Schema(
   {
-    name: {
-      type: String,
-      required: true,
-    },
     restaurant: {
       type: String,
       required: true,
     },
     distance: {
-      type: String,
+      type: Number,
       required: true,
     },
     rate: {
-      type: String,
+      type: Number,
       required: true,
     },
     name: {
@@ -38,4 +33,4 @@ const ItemSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model.Item || mongoose.model("Item", ItemSchema);
+module.exports = mongoose.models.Item || mongoose.model("Item", ItemSchema);

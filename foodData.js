@@ -6,8 +6,7 @@ export const foodData = [
     rate: 4.4,
     name: "Pepperoni Pizza With Eggs",
     price: "4.50",
-    image:
-      "https://images.pexels.com/photos/845802/pexels-photo-845802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "/img/pizza1.jpeg",
   },
   {
     id: 2,
@@ -16,8 +15,7 @@ export const foodData = [
     rate: 4.8,
     name: "Chocolate Mousse Cake",
     price: "8.25",
-    image:
-      "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    image: "/img/cake1.jpeg",
   },
   {
     id: 3,
@@ -26,8 +24,7 @@ export const foodData = [
     rate: 4.1,
     name: "Red Pepper and Cheese Pizza",
     price: "12.50",
-    image:
-      "https://images.pexels.com/photos/1049620/pexels-photo-1049620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "/img/pizza2.jpeg",
   },
   {
     id: 4,
@@ -36,8 +33,7 @@ export const foodData = [
     rate: 4.3,
     name: "Cheeseburger",
     price: "9.00",
-    image:
-      "https://images.pexels.com/photos/2280573/pexels-photo-2280573.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "/img/burger1.jpeg",
   },
   {
     id: 5,
@@ -46,8 +42,7 @@ export const foodData = [
     rate: 4.7,
     name: "Fish Salad Dish",
     price: "14.40",
-    image:
-      "https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "/img/fish1.jpeg",
   },
   {
     id: 6,
@@ -56,8 +51,7 @@ export const foodData = [
     rate: 4.5,
     name: "Tortilla Chips",
     price: "6.35",
-    image:
-      "https://images.pexels.com/photos/1582482/pexels-photo-1582482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "/img/snack1.jpeg",
   },
   {
     id: 7,
@@ -66,8 +60,7 @@ export const foodData = [
     rate: 4.7,
     name: "Salmon Dish with Vegetables",
     price: "9.50",
-    image:
-      "https://images.pexels.com/photos/1516415/pexels-photo-1516415.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "/img/fish2.jpeg",
   },
   {
     id: 8,
@@ -76,7 +69,6 @@ export const foodData = [
     rate: 4.9,
     name: "Pasta Dish",
     price: "11.00",
-    image:
-      "https://images.pexels.com/photos/3009323/pexels-photo-3009323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "/img/salmon.jpeg",
   },
 ];
