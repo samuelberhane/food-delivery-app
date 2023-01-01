@@ -4,7 +4,7 @@ import { FaLaptopHouse } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="mt-6">
+    <div className="mt-6" id="contact">
       <h1 className="text-3xl font-bold text-center">
         Contact<span className="text-yellow-700">s</span>
       </h1>

@@ -10,7 +10,7 @@ import {
   Contact,
 } from "./";
 
-const MenuItems = () => {
+const MenuItems = ({ foodList }) => {
   return (
     <>
       <div className="flex">
@@ -19,10 +19,10 @@ const MenuItems = () => {
           <Categories />
 
           {/* Near You */}
-          <NearYou />
+          <NearYou foodList={foodList} />
 
           {/* Most Popular */}
-          <Popular />
+          <Popular foodList={foodList} />
         </div>
         <div>
           {/* Delivery */}

@@ -3,6 +3,7 @@ import Item from "../../../server/models/itemModel";
 export default async function handler(req, res) {
   dbConnect();
   const { method } = req;
+
   switch (method) {
     // get all food items
     case "GET":

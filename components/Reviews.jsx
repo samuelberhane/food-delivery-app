@@ -3,7 +3,7 @@ import { Review } from "./";
 
 const Reviews = () => {
   return (
-    <div>
+    <div id="reviews">
       <h1 className="text-3xl font-bold text-center">
         Customers <span className="text-yellow-700">Review</span>
       </h1>

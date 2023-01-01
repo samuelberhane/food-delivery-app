@@ -16,12 +16,25 @@ const Navbar = () => {
       {/* links */}
       <ul className="flex gap-4 items-center text-lg">
         <li className="flex items-center relative text-blue-300">
-          <DiJqueryLogo className="absolute -top-2 -left-2 " /> Home
+          <Link href="/">
+            <DiJqueryLogo className="absolute -top-2 -left-2 " /> Home
+          </Link>
         </li>
-        <li>Reviews</li>
-        <li>About Us</li>
-        <li>Join Us</li>
-        <li>Contacts</li>
+        <li>
+          {" "}
+          <Link href="#reviews">Reviews</Link>{" "}
+        </li>
+        <li>
+          <Link href="#about">About Us</Link>{" "}
+        </li>
+        <li>
+          {" "}
+          <Link href="#join">Join Us</Link>{" "}
+        </li>
+        <li>
+          {" "}
+          <Link href="#contact">Contacts</Link>{" "}
+        </li>
       </ul>
 
       {/* order, cart and phone */}

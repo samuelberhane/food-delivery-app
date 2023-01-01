@@ -1,7 +1,7 @@
 import Image from "next/image";
 const Aboutus = () => {
   return (
-    <div className="mt-6">
+    <div className="mt-6" id="about">
       <h1 className="text-3xl font-bold text-center">
         About <span className="text-yellow-700">Us</span>{" "}
       </h1>

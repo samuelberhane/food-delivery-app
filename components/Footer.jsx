@@ -1,5 +1,6 @@
 import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -22,11 +23,21 @@ const Footer = () => {
         </div>
         <div>
           <h1 className="text-2xl font-bold text-yellow-500 mb-1">LINKS</h1>
-          <p>Home</p>
-          <p>Reviews</p>
-          <p>About Us</p>
-          <p>Join Us</p>
-          <p>Contacts</p>
+          <p>
+            <Link href="/">Home</Link>{" "}
+          </p>
+          <p>
+            <Link href="#reviews">Reviews</Link>{" "}
+          </p>
+          <p>
+            <Link href="#about">About Us</Link>{" "}
+          </p>
+          <p>
+            <Link href="#join">Join Us</Link>{" "}
+          </p>
+          <p>
+            <Link href="#contact">Contacts</Link>{" "}
+          </p>
         </div>
         <div>
           <h1 className="text-2xl font-bold text-yellow-500 mb-1">SOCIAL</h1>
