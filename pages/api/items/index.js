@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     // get all food items
     case "GET":
       try {
-        const items = await Item.find({});
+        const items = await Item.find({}).sort({ createdAt: -1 });
         res.status(200).json(items);
       } catch (error) {
         res.status(500).json({ error: error.message });
