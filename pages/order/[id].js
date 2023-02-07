@@ -8,9 +8,9 @@ import axios from "axios";
 const Orders = ({ order }) => {
   const index = order?.step;
   const steps = (stepNumber) => {
-    if (stepNumber - index === 1) return "ongoing";
-    if (stepNumber - index > 1) return "next";
-    if (stepNumber - index < 1) return "active";
+    if (stepNumber - index === 2) return "ongoing";
+    if (stepNumber - index > 2) return "next";
+    if (stepNumber - index < 2) return "active";
   };
   return (
     <div className="order flex px-8 py-4 justify-center gap-28">
