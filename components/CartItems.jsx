@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MdDelete } from "react-icons/md";
 
 const CartItems = ({ item }) => {
   const { price, image, name } = item;
@@ -23,6 +24,9 @@ const CartItems = ({ item }) => {
             <p className="bg-blue-500 px-2 rounded-sm">+</p>
           </div>
           <p className="font-bold ">{price}$</p>
+          <button className="text-red-300">
+            <MdDelete />
+          </button>
         </div>
       </div>
     </div>

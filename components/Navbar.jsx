@@ -1,11 +1,12 @@
 import { DiJqueryLogo } from "react-icons/di";
 import { BsFillTelephoneInboundFill, BsFillCartDashFill } from "react-icons/bs";
-import { useDispatch } from "react-redux";
-import { HANDLE_CART } from "../redux/slice/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { HANDLE_CART, selectCartItems } from "../redux/slice/cartSlice";
 import Link from "next/link";
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const cartItems = useSelector(selectCartItems);
   return (
     <div className="bg-gray-800 flex justify-between px-12  text-white items-center sticky top-0 h-20 z-50">
       {/* logo */}
@@ -49,7 +50,9 @@ const Navbar = () => {
             className="text-2xl cursor-pointer"
             onClick={() => dispatch(HANDLE_CART())}
           />{" "}
-          <p className="absolute -top-4 -right-2 text-lg">0</p>
+          <p className="absolute -top-4 -right-2 text-lg">
+            {cartItems?.length}
+          </p>
         </div>
       </div>
     </div>
