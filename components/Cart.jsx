@@ -15,7 +15,6 @@ const Cart = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [open, setOpen] = useState(false);
-  const [cash, setCash] = useState(false);
   const isShowCart = useSelector(showCart);
   const cartItems = useSelector(selectCartItems);
   let subTotal = 0;
@@ -31,7 +30,7 @@ const Cart = () => {
 
       if (res.status === 200) {
         router.push(`/order/${res.data._id}`);
-        dispatch(REMOVE_ITEMS());
+        dispatch(REMOVE_ITEMS(res?.data?._id));
       }
     } catch (err) {
       console.log(err);
@@ -69,7 +68,7 @@ const Cart = () => {
         {showSpinner && isPending && <div className="spinner" />}
         <PayPalButtons
           disabled={false}
-          forceReRender={[totalAmount, currency]}
+          forceReRender={[totalAmount.toFixed(2), currency]}
           fundingSource={undefined}
           createOrder={(data, actions) => {
             return actions.order
@@ -78,7 +77,7 @@ const Cart = () => {
                   {
                     amount: {
                       currency_code: currency,
-                      value: totalAmount,
+                      value: totalAmount.toFixed(2),
                     },
                   },
                 ],
@@ -94,7 +93,7 @@ const Cart = () => {
               createOrder({
                 customer: shipping.name.full_name,
                 address: shipping.address.address_line_1,
-                total: totalAmount,
+                total: totalAmount.toFixed(2),
                 method: 2,
               });
             });
@@ -124,7 +123,7 @@ const Cart = () => {
           </div>
           <div className="flex justify-between items-center">
             <h1>Sub-Total</h1>
-            <p>${subTotal}</p>
+            <p>${subTotal.toFixed(2)}</p>
           </div>
           <div className="flex justify-between items-center">
             <h1>Delivery Fee</h1>
@@ -132,19 +131,12 @@ const Cart = () => {
           </div>
           <div className="flex justify-between items-center">
             <h1>Total</h1>
-            <p>${subTotal + deliveryFee}</p>
+            <p>${totalAmount.toFixed(2)}</p>
           </div>
 
           <div>
             {open ? (
               <div className="w-[300px] flex flex-col gap-3 mt-4">
-                <button
-                  onClick={() => setCash(true)}
-                  className="bg-blue-600 px-12 py-2 rounded-md w-full"
-                >
-                  CASH ON DELIVERY
-                </button>
-
                 <button
                   onClick={() => setCash(true)}
                   className="bg-green-600 px-12 py-2 rounded-md w-full"

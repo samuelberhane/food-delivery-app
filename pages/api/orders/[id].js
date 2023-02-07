@@ -3,29 +3,22 @@ import Order from "../../../server/models/orderModel";
 
 export default async function handler(req, res) {
   await dbConnect();
-  const { method } = req;
+  const {
+    method,
+    query: { id },
+  } = req;
 
   switch (method) {
-    // get all orders
+    // get single order
     case "GET":
-      console.log(req.body);
       try {
-        const orders = await Order.find({});
-        res.status(200).json(orders);
-      } catch (error) {
-        res.status(500).json({ error: error.message });
-      }
-      break;
-
-    // create new order
-    case "POST":
-      try {
-        const order = await Order.create({ ...req.body });
+        const order = await Order.findById(id);
         res.status(200).json(order);
       } catch (error) {
         res.status(500).json({ error: error.message });
       }
       break;
+
     default:
       break;
   }

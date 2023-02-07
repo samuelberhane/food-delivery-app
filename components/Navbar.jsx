@@ -1,12 +1,30 @@
 import { DiJqueryLogo } from "react-icons/di";
 import { BsFillTelephoneInboundFill, BsFillCartDashFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { HANDLE_CART, selectCartItems } from "../redux/slice/cartSlice";
+import {
+  HANDLE_CART,
+  selectCartItems,
+  selectCurrentOrder,
+  STORAGE_VALUE,
+} from "../redux/slice/cartSlice";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
+  const currentOrder = useSelector(selectCurrentOrder);
+
+  //get saved cartItems and currentOrder from local storage
+  useEffect(() => {
+    dispatch(
+      STORAGE_VALUE({
+        cartItems: JSON.parse(localStorage.getItem("deliveryCartItems")) || [],
+        currentOrder: JSON.parse(localStorage.getItem("deliveryCurrentOrder")),
+      })
+    );
+  }, []);
+
   return (
     <div className="bg-gray-800 flex justify-between px-12  text-white items-center sticky top-0 h-20 z-50">
       {/* logo */}
@@ -40,7 +58,7 @@ const Navbar = () => {
 
       {/* order, cart and phone */}
       <div className="flex gap-8 items-center text-xl">
-        <Link href="/order/:id">Orders</Link>
+        <Link href={`/order/${currentOrder}`}>Orders</Link>
         <div className="flex gap-1 items-center">
           <BsFillTelephoneInboundFill className="text-2xl text-yellow-500" />
           <p>+1 876 124 243</p>

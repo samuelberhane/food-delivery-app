@@ -1,7 +1,7 @@
 import dbConnect from "../../../server/dbConnect";
 import Item from "../../../server/models/itemModel";
 export default async function handler(req, res) {
-  dbConnect();
+  await dbConnect();
   const { method } = req;
 
   switch (method) {
