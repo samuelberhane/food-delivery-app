@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { MdDelete } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { REMOVE_ITEM } from "../redux/slice/cartSlice";
 
 const CartItems = ({ item }) => {
-  const { price, image, name } = item;
+  const dispatch = useDispatch();
+  const { price, image, name, _id } = item;
   return (
     <div className="flex gap-3 bg-gray-800 mb-2 px-2 rounded-sm hover:bg-gray-600">
       <div className="cartFoodContainer mt-1">
@@ -24,7 +27,10 @@ const CartItems = ({ item }) => {
             <p className="bg-blue-500 px-2 rounded-sm">+</p>
           </div>
           <p className="font-bold ">{price}$</p>
-          <button className="text-red-300">
+          <button
+            className="text-red-300"
+            onClick={() => dispatch(REMOVE_ITEM(_id))}
+          >
             <MdDelete />
           </button>
         </div>
