@@ -1,6 +1,5 @@
-import { foodData } from "../foodData";
 import { CartItems } from "./";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { showCart, selectCartItems } from "../redux/slice/cartSlice";
 import { useEffect, useState } from "react";
 import {
@@ -8,14 +7,36 @@ import {
   PayPalScriptProvider,
   usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
+import { useRouter } from "next/router";
+import { REMOVE_ITEMS } from "../redux/slice/cartSlice";
+import axios from "axios";
 
 const Cart = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [cash, setCash] = useState(false);
   const isShowCart = useSelector(showCart);
   const cartItems = useSelector(selectCartItems);
   let subTotal = 0;
   let totalDistance = 0;
+
+  // create new order
+  const createOrder = async (data) => {
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_HOST}/api/orders`,
+        data
+      );
+
+      if (res.status === 200) {
+        router.push(`/order/${res.data._id}`);
+        dispatch(REMOVE_ITEMS());
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   // get sub total price of cart items
   cartItems?.map((item) => {
@@ -27,11 +48,9 @@ const Cart = () => {
   const deliveryFee =
     parseInt((totalDistance / cartItems?.length) * 4) + cartItems?.length * 1.5;
 
-  // currency and total amount for payment
-  const totalAmount = subTotal + deliveryFee;
+  const totalAmount = deliveryFee + subTotal;
   const currency = "USD";
 
-  // Custom component to wrap the PayPalButtons and handle currency changes
   const ButtonWrapper = ({ currency, showSpinner }) => {
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
 
@@ -50,7 +69,7 @@ const Cart = () => {
         {showSpinner && isPending && <div className="spinner" />}
         <PayPalButtons
           disabled={false}
-          forceReRender={[amount, currency]}
+          forceReRender={[totalAmount, currency]}
           fundingSource={undefined}
           createOrder={(data, actions) => {
             return actions.order
@@ -59,7 +78,7 @@ const Cart = () => {
                   {
                     amount: {
                       currency_code: currency,
-                      value: amount,
+                      value: totalAmount,
                     },
                   },
                 ],
@@ -76,7 +95,7 @@ const Cart = () => {
                 customer: shipping.name.full_name,
                 address: shipping.address.address_line_1,
                 total: totalAmount,
-                method: 1,
+                method: 2,
               });
             });
           }}
@@ -118,21 +137,22 @@ const Cart = () => {
 
           <div>
             {open ? (
-              <div>
+              <div className="w-[300px] flex flex-col gap-3 mt-4">
                 <button
                   onClick={() => setCash(true)}
-                  className="bg-blue-600 px-12 py-2 rounded-md w-full mb-3 mt-4"
+                  className="bg-blue-600 px-12 py-2 rounded-md w-full"
                 >
                   CASH ON DELIVERY
                 </button>
 
                 <button
                   onClick={() => setCash(true)}
-                  className="bg-green-600 px-12 py-2 rounded-md w-full mb-3"
+                  className="bg-green-600 px-12 py-2 rounded-md w-full"
                 >
                   PAY WITH STRIPE
                 </button>
                 <PayPalScriptProvider
+                  className="bg-red-500"
                   options={{
                     "client-id": process.env.NEXT_PUBLIC_PAYPAL_ID,
                     components: "buttons",

@@ -25,7 +25,7 @@ export default function Home({ foodList }) {
 }
 
 export const getServerSideProps = async () => {
-  const { data } = await axios.get("http://localhost:3000/api/items");
+  const { data } = await axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/items`);
   return {
     props: {
       foodList: data,

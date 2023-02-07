@@ -10,9 +10,9 @@ const Navbar = () => {
   return (
     <div className="bg-gray-800 flex justify-between px-12  text-white items-center sticky top-0 h-20 z-50">
       {/* logo */}
-      <h1 className="flex text-3xl items-center">
+      <Link href="/" className="flex text-3xl items-center">
         Daily <DiJqueryLogo className="text-blue-300" /> Meal
-      </h1>
+      </Link>
 
       {/* links */}
       <ul className="flex gap-4 items-center text-lg">

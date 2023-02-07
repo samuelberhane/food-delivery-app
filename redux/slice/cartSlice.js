@@ -20,6 +20,9 @@ const cartSlice = createSlice({
         (item) => item._id !== action.payload
       );
     },
+    REMOVE_ITEMS: (state, action) => {
+      state.cartItems = [];
+    },
     INCREASE_ITEM: (state, action) => {
       state.cartItems = state.cartItems.map((item) => {
         if (item._id === action.payload)
@@ -43,6 +46,7 @@ export const {
   HANDLE_CART,
   ADD_ITEM,
   REMOVE_ITEM,
+  REMOVE_ITEMS,
   INCREASE_ITEM,
   DECREASE_ITEM,
 } = cartSlice.actions;
