@@ -107,3 +107,7 @@
 ::-webkit-scrollbar-track {
   background-color: #fff;
 }
+
+.input {
+  @apply block w-[300px] mb-2 outline-none shadow bg-gray-100 px-2 py-1;
+}

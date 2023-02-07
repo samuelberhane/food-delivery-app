@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { AiFillStar } from "react-icons/ai";
 import { GiPathDistance } from "react-icons/gi";
 import { MdDeliveryDining } from "react-icons/md";

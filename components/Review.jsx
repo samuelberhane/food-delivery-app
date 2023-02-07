@@ -1,5 +1,5 @@
 import { FaCommentAlt } from "react-icons/fa";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const Review = ({ review }) => {
   const { image, name, text } = review;

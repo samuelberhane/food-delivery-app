@@ -19,6 +19,7 @@ import Cart from "./Cart";
 import CartItems from "./CartItems";
 import Items from "./Items";
 import Orders from "./Orders";
+import CreateItem from "./CreateItem";
 
 export {
   Navbar,
@@ -42,4 +43,5 @@ export {
   CartItems,
   Orders,
   Items,
+  CreateItem,
 };

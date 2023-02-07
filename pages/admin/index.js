@@ -1,7 +1,7 @@
 import axios from "axios";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React, { useState } from "react";
-import { Items, Orders } from "../../components";
+import { CreateItem, Items, Orders } from "../../components";
 
 const Admin = ({ items, orders }) => {
   const [allItems, setAllItems] = useState(items);
@@ -30,11 +30,8 @@ const Admin = ({ items, orders }) => {
 
   return (
     <div className="min-h-[60vh] mt-4 px-3 md:px-4">
-      <div>
-        <h1 className="text-3xl font-bold mb-2">
-          Create <span className="text-yellow-600">Item</span>
-        </h1>
-      </div>
+      <CreateItem />
+
       <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-3">
         <Items allItems={allItems} handleDelete={handleDelete} />
         <Orders allOrders={allOrders} handleStage={handleStage} />

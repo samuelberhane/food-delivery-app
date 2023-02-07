@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 const Aboutus = () => {
   return (
     <div className="mt-6" id="about">
