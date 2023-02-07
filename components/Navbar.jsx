@@ -50,7 +50,7 @@ const Navbar = () => {
             className="text-2xl cursor-pointer"
             onClick={() => dispatch(HANDLE_CART())}
           />{" "}
-          <p className="absolute -top-4 -right-2 text-lg">
+          <p className="absolute -top-3 -right-3 text-sm bg-yellow-500 rounded-full py-[0.08rem] px-2">
             {cartItems?.length}
           </p>
         </div>

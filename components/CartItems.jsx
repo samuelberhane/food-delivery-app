@@ -27,14 +27,14 @@ const CartItems = ({ item }) => {
         <div className="flex items-center justify-between w-full mt-2 mb-1">
           <div className="flex items-center">
             <p
-              className="bg-blue-500 px-2 rounded-sm"
+              className="bg-blue-500 px-2 rounded-sm cursor-pointer"
               onClick={() => dispatch(DECREASE_ITEM(_id))}
             >
               -
             </p>
             <p className="mx-2">{amount}</p>
             <p
-              className="bg-blue-500 px-2 rounded-sm"
+              className="bg-blue-500 px-2 rounded-sm cursor-pointer"
               onClick={() => dispatch(INCREASE_ITEM(_id))}
             >
               +
