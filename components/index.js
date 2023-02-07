@@ -17,6 +17,8 @@ import Aboutus from "./Aboutus";
 import Contact from "./Contact";
 import Cart from "./Cart";
 import CartItems from "./CartItems";
+import Items from "./Items";
+import Orders from "./Orders";
 
 export {
   Navbar,
@@ -38,4 +40,6 @@ export {
   Contact,
   Cart,
   CartItems,
+  Orders,
+  Items,
 };

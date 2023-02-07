@@ -58,7 +58,7 @@ const Navbar = () => {
 
       {/* order, cart and phone */}
       <div className="flex gap-8 items-center text-xl">
-        <Link href={`/order/${currentOrder}`}>Orders</Link>
+        <Link href={currentOrder ? `/order/${currentOrder}` : "/"}>Orders</Link>
         <div className="flex gap-1 items-center">
           <BsFillTelephoneInboundFill className="text-2xl text-yellow-500" />
           <p>+1 876 124 243</p>
