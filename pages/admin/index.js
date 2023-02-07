@@ -124,7 +124,16 @@ const Admin = ({ items, orders }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
+  const myCookie = ctx.req?.cookies || "";
+  if (myCookie.token !== process.env.NEXT_PUBLIC_TOKEN) {
+    return {
+      redirect: {
+        destination: "/admin/login",
+        permanent: false,
+      },
+    };
+  }
   const items = await axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/items`);
   const orders = await axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/orders`);
   return {
