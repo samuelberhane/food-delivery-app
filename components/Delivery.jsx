@@ -4,7 +4,7 @@ import { GiForkKnifeSpoon } from "react-icons/gi";
 
 const Delivery = () => {
   return (
-    <div className="delivery mt-2 lg:mt-12">
+    <div className="delivery mt-2">
       <div className="flex gap-4 items-center">
         <TbTruckDelivery className="text-6xl p-3 rounded-full shadow-xl" />
         <div>
