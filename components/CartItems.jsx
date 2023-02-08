@@ -12,14 +12,8 @@ const CartItems = ({ item }) => {
   const { price, image, name, _id, amount } = item;
   return (
     <div className="flex gap-3 bg-gray-800 mb-2 px-2 rounded-sm hover:bg-gray-600">
-      <div className="cartFoodContainer mt-1">
-        <Image
-          src={image}
-          alt="foodImg"
-          height="20"
-          width="40"
-          className="cartFood"
-        />
+      <div className="relative w-[130px] h-[85px]">
+        <Image src={image} alt="foodImg" layout="fill" className="rounded" />
       </div>
       <div className="w-full">
         <p>{name}</p>

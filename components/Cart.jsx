@@ -10,6 +10,7 @@ import {
 import { useRouter } from "next/router";
 import { REMOVE_ITEMS } from "../redux/slice/cartSlice";
 import axios from "axios";
+import StripeCheckout from "react-stripe-checkout";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -105,9 +106,28 @@ const Cart = () => {
   };
 
   // stripe payment
-  const handleStripe = async () => {};
+  const handleStripe = async (token) => {
+    const data = {
+      id: token.id,
+      customer: token.card.name,
+      address: token.card.address_line1,
+      total: totalAmount.toFixed(2),
+      method: 1,
+    };
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_HOST}/api/orders`,
+        data
+      );
 
-  console.log("cartItem", cartItems);
+      if (res.status === 200) {
+        router.push(`/order/${res.data._id}`);
+        dispatch(REMOVE_ITEMS(res?.data?._id));
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div
@@ -142,13 +162,19 @@ const Cart = () => {
 
           <div>
             {open ? (
-              <div className="w-[300px] flex flex-col gap-3 mt-4">
-                <button
-                  onClick={handleStripe}
-                  className="bg-green-600 px-12 py-2 rounded-md w-full"
-                >
-                  PAY WITH STRIPE
-                </button>
+              <div className="w-full px-4 flex flex-col gap-3 mt-4">
+                {/* stripe checkout */}
+                <StripeCheckout
+                  stripeKey={process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY}
+                  label="PAY WITH STRIPE"
+                  name="Pay With Credit Card"
+                  billingAddress
+                  shippingAddress
+                  amount={totalAmount.toFixed(2) * 100}
+                  description={`Your total is ${totalAmount.toFixed(2)}`}
+                  token={handleStripe}
+                />
+                {/* paypal payment */}
                 <PayPalScriptProvider
                   className="bg-red-500"
                   options={{

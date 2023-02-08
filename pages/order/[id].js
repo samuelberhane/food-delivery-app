@@ -27,7 +27,7 @@ const Orders = ({ order }) => {
               Customer
             </h1>
             <p className="text-sm md:text-lg whitespace-nowrap">
-              {order?.customer}
+              {order?.customer.slice(0, 15)}
             </p>
           </div>
           <div className="flex flex-col  items-center gap-1">

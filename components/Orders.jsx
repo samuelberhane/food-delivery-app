@@ -23,7 +23,7 @@ const Orders = ({ allOrders, handleStage }) => {
           >
             <div className="grid grid-cols-5 gap-4 pb-1">
               <p>{order?._id.slice(0, 5)}...</p>
-              <p>{order?.customer}</p>
+              <p>{order?.customer.slice(0, 15)}</p>
               <p>${order?.address}</p>
               {order?.step === 1 && <p>Preparing</p>}
               {order?.step === 2 && <p>On The Way</p>}

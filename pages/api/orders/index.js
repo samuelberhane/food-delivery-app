@@ -1,5 +1,6 @@
 import dbConnect from "../../../server/dbConnect";
 import Order from "../../../server/models/orderModel";
+const Stripe = require("stripe")(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   await dbConnect();
@@ -19,8 +20,16 @@ export default async function handler(req, res) {
 
     // create new order
     case "POST":
+      const { id, customer, address, total, method } = req.body;
       try {
-        const order = await Order.create({ ...req.body });
+        if (id) {
+          await Stripe.charges.create({
+            source: id,
+            amount: total * 100,
+            currency: "usd",
+          });
+        }
+        const order = await Order.create({ customer, address, total, method });
         res.status(200).json(order);
       } catch (error) {
         res.status(500).json({ error: error.message });
