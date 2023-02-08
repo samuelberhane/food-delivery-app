@@ -1,0 +1,9 @@
+NEXT_PUBLIC_MONGODB_URI=mongodb_url
+NEXT_PUBLIC_PAYPAL_ID=paypal_id
+NEXT_PUBLIC_HOST=http://localhost:3000 or host_url
+NEXT_PUBLIC_ADMIN_USERNAME=for this website use "admin" as username or create new for your own website
+NEXT_PUBLIC_ADMIN_PASSWORD=for this website use "12345admin" as password or create new for your own website
+NEXT_PUBLIC_TOKEN=some_random_text
+NEXT_PUBLIC_CLOUDINARY_URI=https://api.cloudinary.com/v1_1/dat2kqoex/image/upload or cloudinary_upload_url
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=stripe_public_key
+NEXT_PUBLIC_STRIPE_SECRET_KEY=stripe_secret_key

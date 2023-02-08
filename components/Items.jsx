@@ -35,9 +35,6 @@ const Items = ({ handleItemDelete, allItems }) => {
               <p>{item?.rate}</p>
             </div>
             <div className="border-t-2 flex justify-end items-center gap-4 py-1">
-              <button className="py-1 px-5 rounded bg-blue-500 text-white">
-                Edit
-              </button>
               <button
                 className="py-1 px-5 rounded bg-red-500 text-white"
                 onClick={() => handleItemDelete(item?._id)}
