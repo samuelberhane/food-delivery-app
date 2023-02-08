@@ -107,7 +107,7 @@ const Cart = () => {
     <div
       className={`${
         isShowCart ? "showCart" : "hideCart"
-      } fixed bg-black text-white px-2 overflow-y-scroll pb-10 py-2`}
+      } fixed bg-black text-white px-2 overflow-y-scroll pb-10 py-2 z-40`}
     >
       <h1 className="text-3xl font-bold mb-2">
         My <span className="text-yellow-700">Orders</span>{" "}
