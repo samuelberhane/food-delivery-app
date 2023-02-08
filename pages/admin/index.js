@@ -7,9 +7,16 @@ const Admin = ({ items, orders }) => {
   const [allItems, setAllItems] = useState(items);
   const [allOrders, setAllOrders] = useState(orders);
 
-  const handleDelete = async (id) => {
+  // delete item
+  const handleItemDelete = async (id) => {
     await axios.delete(`${[process.env.NEXT_PUBLIC_HOST]}/api/items/${id}`);
     setAllItems(allItems?.filter((item) => item._id !== id));
+  };
+
+  // delete order
+  const handleOrderDelete = async (id) => {
+    await axios.delete(`${[process.env.NEXT_PUBLIC_HOST]}/api/orders/${id}`);
+    setAllOrders(allOrders?.filter((order) => order._id !== id));
   };
 
   const handleStage = async (id) => {
@@ -32,8 +39,12 @@ const Admin = ({ items, orders }) => {
     <div className="min-h-[60vh] mt-4 px-3 md:px-4">
       <CreateItem setAllItems={setAllItems} />
       <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-3">
-        <Items allItems={allItems} handleDelete={handleDelete} />
-        <Orders allOrders={allOrders} handleStage={handleStage} />
+        <Items allItems={allItems} handleItemDelete={handleItemDelete} />
+        <Orders
+          allOrders={allOrders}
+          handleStage={handleStage}
+          handleOrderDelete={handleOrderDelete}
+        />
       </div>
     </div>
   );

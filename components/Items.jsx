@@ -1,7 +1,7 @@
 import Image from "next/legacy/image";
 import { useState } from "react";
 
-const Items = ({ handleDelete, allItems }) => {
+const Items = ({ handleItemDelete, allItems }) => {
   const [index, setIndex] = useState(6);
   return (
     <div className="mb-6">
@@ -40,7 +40,7 @@ const Items = ({ handleDelete, allItems }) => {
               </button>
               <button
                 className="py-1 px-5 rounded bg-red-500 text-white"
-                onClick={() => handleDelete(item?._id)}
+                onClick={() => handleItemDelete(item?._id)}
               >
                 Delete
               </button>

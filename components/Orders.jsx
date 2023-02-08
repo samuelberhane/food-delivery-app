@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Orders = ({ allOrders, handleStage }) => {
+const Orders = ({ allOrders, handleStage, handleOrderDelete }) => {
   const [index, setIndex] = useState(6);
 
   return (
@@ -30,16 +30,24 @@ const Orders = ({ allOrders, handleStage }) => {
               {order?.step === 3 && <p>Delivered</p>}
               <p>${order?.total}</p>
             </div>
-            {order?.step < 3 && (
-              <div className="border-t-2 flex justify-end items-center gap-4 py-1">
+
+            <div className="border-t-2 flex justify-end items-center gap-4 py-1">
+              {order?.step < 3 && (
                 <button
                   className="py-1 px-5 rounded bg-blue-500 text-white"
                   onClick={() => handleStage(order?._id)}
                 >
                   Next Stage
                 </button>
-              </div>
-            )}
+              )}
+
+              <button
+                className="py-1 px-5 rounded bg-red-500 text-white"
+                onClick={() => handleOrderDelete(order?._id)}
+              >
+                Delete
+              </button>
+            </div>
           </div>
         ))}
       </div>

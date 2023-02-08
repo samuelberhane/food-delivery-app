@@ -28,6 +28,15 @@ export default async function handler(req, res) {
         res.status(500).json({ error: error.message });
       }
       break;
+    // delete item
+    case "DELETE":
+      try {
+        await Order.findByIdAndDelete(id);
+        res.status(200).json("Order Deleted.");
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+      break;
 
     default:
       break;
