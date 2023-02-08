@@ -1,6 +1,7 @@
+import axios from "axios";
 import { useState } from "react";
 
-const CreateItem = () => {
+const CreateItem = ({ setAllItems }) => {
   const [imageFile, setImageFile] = useState(null);
   const [inputData, setInputData] = useState({
     restaurant: "",
@@ -14,10 +15,28 @@ const CreateItem = () => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
 
-  const handleCreate = (e) => {
+  const handleCreate = async (e) => {
     e.preventDefault();
-    console.log("imageFile", imageFile);
-    console.log("inputData", inputData);
+    const data = new FormData();
+    data.append("file", imageFile);
+    data.append("upload_preset", "images");
+    try {
+      const uploadResponse = await axios.post(
+        process.env.NEXT_PUBLIC_CLOUDINARY_URI,
+        data
+      );
+      const item = await axios.post(
+        `${process.env.NEXT_PUBLIC_HOST}/api/items`,
+        {
+          ...inputData,
+          image: uploadResponse?.data?.url,
+        }
+      );
+      setAllItems((prev) => [item?.data, ...prev]);
+    } catch (error) {
+      console.log(error);
+      alert(error.message);
+    }
     setImageFile(null);
     setInputData({
       restaurant: "",
@@ -35,6 +54,7 @@ const CreateItem = () => {
       </h1>
       <form className="px-4" onSubmit={handleCreate}>
         <input
+          required
           className="input"
           type="text"
           placeholder="Name"
@@ -43,6 +63,7 @@ const CreateItem = () => {
           onChange={handleChange}
         />
         <input
+          required
           className="input"
           type="text"
           placeholder="Restaurant"
@@ -51,6 +72,7 @@ const CreateItem = () => {
           onChange={handleChange}
         />
         <input
+          required
           className="input"
           type="number"
           placeholder="Price"
@@ -59,6 +81,7 @@ const CreateItem = () => {
           onChange={handleChange}
         />
         <input
+          required
           className="input"
           type="number"
           placeholder="Rate"
@@ -67,6 +90,7 @@ const CreateItem = () => {
           onChange={handleChange}
         />
         <input
+          required
           className="input"
           type="number"
           placeholder="Distance"
@@ -74,7 +98,11 @@ const CreateItem = () => {
           value={inputData.distance}
           onChange={handleChange}
         />
-        <input type="file" onChange={(e) => setImageFile(e.target.files[0])} />
+        <input
+          required
+          type="file"
+          onChange={(e) => setImageFile(e.target.files[0])}
+        />
         <button
           type="submit"
           className="block px-4 py-2 bg-blue-500 hover:bg-blue-700 w-[300px] mt-4 mb-6 text-white rounded"

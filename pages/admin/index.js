@@ -30,8 +30,7 @@ const Admin = ({ items, orders }) => {
 
   return (
     <div className="min-h-[60vh] mt-4 px-3 md:px-4">
-      <CreateItem />
-
+      <CreateItem setAllItems={setAllItems} />
       <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-3">
         <Items allItems={allItems} handleDelete={handleDelete} />
         <Orders allOrders={allOrders} handleStage={handleStage} />
