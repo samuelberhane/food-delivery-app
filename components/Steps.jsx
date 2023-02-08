@@ -15,7 +15,9 @@ const Steps = () => {
             width={100}
             className="my-3 rounded-md"
           />
-          <h1 className="font-bold text-xl">Choose Your Favorite And Order</h1>
+          <h1 className="font-bold text-xl text-center">
+            Choose Your Favorite And Order
+          </h1>
           <p className="w-[60%] text-center">
             Choose your favorite meals and order online or by phone.
           </p>
@@ -28,7 +30,9 @@ const Steps = () => {
             width={100}
             className="my-3 rounded-md"
           />
-          <h1 className="font-bold text-xl">We Deliver Your Meals</h1>
+          <h1 className="font-bold text-xl text-center">
+            We Deliver Your Meals
+          </h1>
           <p className="w-[60%] text-center">
             We prepared and delivered meals and arrive at your doorstep fast.
           </p>
@@ -41,7 +45,7 @@ const Steps = () => {
             width={100}
             className="my-3 rounded-md"
           />
-          <h1 className="font-bold text-xl">Eat And Enjoy</h1>
+          <h1 className="font-bold text-xl text-center">Eat And Enjoy</h1>
           <p className="w-[60%] text-center">
             No cooking, enjoy your healthy meals with your family.
           </p>
