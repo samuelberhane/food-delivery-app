@@ -4,7 +4,7 @@
 
 .home {
   min-height: calc(100vh - 5rem);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(37, 33, 33, 0.5);
 }
 
 .foodImg {
@@ -13,9 +13,7 @@
 }
 
 .deliveryText {
-  top: 10%;
-  left: 10%;
-  color: #fff;
+  @apply top-[5%] left-2 md:top-[8%] md:left-[3%] text-white;
 }
 
 .categoryImg {
