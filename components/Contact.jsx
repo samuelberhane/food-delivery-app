@@ -4,11 +4,11 @@ import { FaLaptopHouse } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="mt-6" id="contact">
+    <div className="mt-4" id="contact">
       <h1 className="text-3xl font-bold text-center">
         Contact<span className="text-yellow-700">s</span>
       </h1>
-      <div className="px-6 flex items-center justify-between mt-4">
+      <div className="px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-2 gap-2">
         <div>
           <ImOffice className="text-4xl  text-yellow-600" />
           <h1 className="text-xl font-bold my-1">Head Office</h1>
