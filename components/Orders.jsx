@@ -43,7 +43,7 @@ const Orders = ({ allOrders, handleStage }) => {
           </div>
         ))}
       </div>
-      {allOrders.length > 6 && (
+      {allOrders.length > 6 && index < allOrders.length && (
         <button
           className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded"
           onClick={() => setIndex((prev) => prev + 2)}
