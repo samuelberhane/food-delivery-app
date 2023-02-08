@@ -14,7 +14,7 @@ const MenuItems = ({ foodList }) => {
   return (
     <>
       <div className="flex flex-col lg:flex-row">
-        <div className=" px-2 md:px-4 py-4 flex flex-col gap-4">
+        <div className="px-2 py-4 flex flex-col gap-4 lg:flex-3">
           {/* Menu Category */}
           <Categories />
 
@@ -24,7 +24,7 @@ const MenuItems = ({ foodList }) => {
           {/* Most Popular */}
           <Popular foodList={foodList} />
         </div>
-        <div className="px-2 md:px-4 ">
+        <div className="px-2 lg:flex-1">
           {/* Delivery */}
           <Delivery />
 
