@@ -20,6 +20,19 @@ const Cart = () => {
   let subTotal = 0;
   let totalDistance = 0;
 
+  // get sub total price of cart items
+  cartItems?.map((item) => {
+    subTotal += parseFloat(item.price * item.amount);
+    totalDistance += item.distance + item.amount / 2;
+  });
+
+  // calculate delivery fee
+  const deliveryFee =
+    parseInt((totalDistance / cartItems?.length) * 4) + cartItems?.length * 1.5;
+
+  const totalAmount = deliveryFee + subTotal;
+
+  // paypal payment
   // create new order
   const createOrder = async (data) => {
     try {
@@ -37,19 +50,7 @@ const Cart = () => {
     }
   };
 
-  // get sub total price of cart items
-  cartItems?.map((item) => {
-    subTotal += parseFloat(item.price * item.amount);
-    totalDistance += item.distance + item.amount / 2;
-  });
-
-  // calculate delivery fee
-  const deliveryFee =
-    parseInt((totalDistance / cartItems?.length) * 4) + cartItems?.length * 1.5;
-
-  const totalAmount = deliveryFee + subTotal;
   const currency = "USD";
-
   const ButtonWrapper = ({ currency, showSpinner }) => {
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
 
@@ -103,6 +104,11 @@ const Cart = () => {
     );
   };
 
+  // stripe payment
+  const handleStripe = async () => {};
+
+  console.log("cartItem", cartItems);
+
   return (
     <div
       className={`${
@@ -138,7 +144,7 @@ const Cart = () => {
             {open ? (
               <div className="w-[300px] flex flex-col gap-3 mt-4">
                 <button
-                  onClick={() => setCash(true)}
+                  onClick={handleStripe}
                   className="bg-green-600 px-12 py-2 rounded-md w-full"
                 >
                   PAY WITH STRIPE
