@@ -5,7 +5,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 
 const HomeTop = () => {
   return (
-    <div className="home grid lg:grid-cols-2 gap-4 pt-5 px-4 md:px-10 lg:px-14">
+    <div className="home grid lg:grid-cols-2 gap-4 pt-5 px-4 md:px-10 lg:px-14 text-white">
       <div className="z-20">
         <h1 className="text-4xl md:text-6xl font-bold text-white">Fastest</h1>
         <h1 className="text-4xl text-yellow-600 md:text-6xl font-bold">

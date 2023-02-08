@@ -13,8 +13,8 @@ import {
 const MenuItems = ({ foodList }) => {
   return (
     <>
-      <div className="flex">
-        <div className="w-[85%] px-6 py-6 flex flex-col gap-6">
+      <div className="flex flex-col lg:flex-row">
+        <div className=" px-2 md:px-4 py-4 flex flex-col gap-4">
           {/* Menu Category */}
           <Categories />
 
@@ -24,7 +24,7 @@ const MenuItems = ({ foodList }) => {
           {/* Most Popular */}
           <Popular foodList={foodList} />
         </div>
-        <div>
+        <div className="px-2 md:px-4 ">
           {/* Delivery */}
           <Delivery />
 
