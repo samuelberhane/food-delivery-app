@@ -9,7 +9,7 @@ const Items = ({ handleDelete, allItems }) => {
         Food <span className="text-yellow-600">Items</span>
       </h1>
       <div className="bg-white">
-        <div className="grid grid-cols-7 gap-4 bg-[#ecefd2] px-2 py-1">
+        <div className="grid grid-cols-5 sm:grid-cols-7 gap-6 bg-[#ecefd2] px-2 py-1 text-[12px] sm:text-sm md:text-[16px]">
           <p>Id</p>
           <p>Name</p>
           <p>Image</p>
@@ -20,10 +20,10 @@ const Items = ({ handleDelete, allItems }) => {
         </div>
         {allItems?.slice(0, index)?.map((item, index) => (
           <div
-            className="px-2 py-1 mb-2 border-2 border-yellow-100 text-sm"
+            className="px-1 py-1 mb-2 border-2 border-yellow-100 text-sm"
             key={index}
           >
-            <div className="grid grid-cols-7 gap-4 pb-1">
+            <div className="grid grid-cols-5 sm:grid-cols-7 gap-6 pb-1 text-[12px] sm:text-sm md:text-[16px]">
               <p>{item?._id.slice(0, 5)}...</p>
               <p>{item?.name}</p>
               <div className="relative h-10 w-14">

@@ -22,7 +22,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="min-h-[56vh]">
+    <div className="min-h-[60vh] md:h-[72vh] lg:h-[60vh]">
       <div className="flex flex-col  items-center mt-4">
         <h1 className="text-2xl font-bold mb-3">
           Admin <span className="text-yellow-600">Login</span>
