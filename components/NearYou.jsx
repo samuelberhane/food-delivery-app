@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FoodCard } from "./";
 
 const NearYou = ({ foodList }) => {
-  const [index, setIndex] = useState(6);
+  const [index, setIndex] = useState(8);
   const nearPlace = foodList?.filter((food) => +food.distance < 2);
   return (
     <div>
@@ -14,7 +14,7 @@ const NearYou = ({ foodList }) => {
           <FoodCard item={item} key={index} />
         ))}
       </div>
-      {nearPlace.length > 6 && index < nearPlace.length && (
+      {nearPlace.length > 8 && index < nearPlace.length && (
         <button
           className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded"
           onClick={() => setIndex((prev) => prev + 2)}

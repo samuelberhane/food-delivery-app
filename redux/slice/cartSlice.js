@@ -22,7 +22,14 @@ const cartSlice = createSlice({
       );
     },
     ADD_ITEM: (state, action) => {
-      state.cartItems = [...state.cartItems, { ...action.payload, amount: 1 }];
+      const findItem = state.cartItems.find(
+        (item) => item._id === action.payload._id
+      );
+      if (!findItem)
+        state.cartItems = [
+          ...state.cartItems,
+          { ...action.payload, amount: 1 },
+        ];
       localStorage.setItem(
         "deliveryCartItems",
         JSON.stringify(state.cartItems)

@@ -40,13 +40,14 @@ const Orders = ({ allOrders, handleStage, handleOrderDelete }) => {
                   Next Stage
                 </button>
               )}
-
-              <button
-                className="py-1 px-5 rounded bg-red-500 text-white"
-                onClick={() => handleOrderDelete(order?._id)}
-              >
-                Delete
-              </button>
+              {order?.step > 3 && (
+                <button
+                  className="py-1 px-5 rounded bg-red-500 text-white"
+                  onClick={() => handleOrderDelete(order?._id)}
+                >
+                  Delete
+                </button>
+              )}
             </div>
           </div>
         ))}

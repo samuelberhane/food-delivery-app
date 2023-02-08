@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FoodCard } from "./";
 
 const Popular = ({ foodList }) => {
-  const [index, setIndex] = useState(6);
+  const [index, setIndex] = useState(8);
   return (
     <div>
       <h1 className="text-3xl font-bold">
@@ -13,7 +13,7 @@ const Popular = ({ foodList }) => {
           <FoodCard item={item} key={index} />
         ))}
       </div>
-      {foodList.length > 6 && index < foodList.length && (
+      {foodList.length > 8 && index < foodList.length && (
         <button
           className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded"
           onClick={() => setIndex((prev) => prev + 2)}
